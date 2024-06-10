@@ -27,7 +27,7 @@ export const Box = React.forwardRef(
         />
         <style jsx>{`
           ${Tag} {
-            ${renderCSS(styleSheet, "xs")};
+            ${renderCSS(styleSheetProps, "xs")};
           }
           ${Tag}:hover {
             ${renderCSS(hover, "xs")};
@@ -39,7 +39,7 @@ export const Box = React.forwardRef(
               "Breakpoints.sm"
             ]}px) {
             ${Tag} {
-              ${renderCSS(styleSheet, "sm")};
+              ${renderCSS(styleSheetProps, "sm")};
             }
             ${Tag}:hover {
               ${renderCSS(hover, "sm")};
@@ -52,7 +52,7 @@ export const Box = React.forwardRef(
               "Breakpoints.md"
             ]}px) {
             ${Tag} {
-              ${renderCSS(styleSheet, "md")};
+              ${renderCSS(styleSheetProps, "md")};
             }
             ${Tag}:hover {
               ${renderCSS(hover, "md")};
@@ -65,7 +65,7 @@ export const Box = React.forwardRef(
               "Breakpoints.lg"
             ]}px) {
             ${Tag} {
-              ${renderCSS(styleSheet, "lg")};
+              ${renderCSS(styleSheetProps, "lg")};
             }
             ${Tag}:hover {
               ${renderCSS(hover, "lg")};
@@ -78,7 +78,7 @@ export const Box = React.forwardRef(
               "Breakpoints.xl"
             ]}px) {
             ${Tag} {
-              ${renderCSS(styleSheet, "xl")};
+              ${renderCSS(styleSheetProps, "xl")};
             }
             ${Tag}:hover {
               ${renderCSS(hover, "xl")};
