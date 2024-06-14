@@ -6,3 +6,4 @@ export { Image } from "./image";
 export { Input } from "./input";
 export { Text } from "./text";
 export { Footer } from "./footer";
+export { HeadTitle } from "./head-title";

@@ -1,4 +1,4 @@
-import { Link } from "../../components";
+import { HeadTitle, Link } from "../../components";
 
 const FAQ_API_URL =
   "https://gist.githubusercontent.com/omariosouto/0ceab54bdd8182cbd1a4549d32945c1a/raw/578ad1e8e5296fa048e3e7ff6b317f7497b31ad9/alura-cases-faq.json";
@@ -20,6 +20,7 @@ export const getStaticProps = async () => {
 export default function FaqPage({ faqList }) {
   return (
     <div>
+      <HeadTitle>FAQ - Alura Cases Campanha</HeadTitle>
       <h1>Alura Cases FAQ</h1>
       <Link href="/" passHref>
         Go back to home

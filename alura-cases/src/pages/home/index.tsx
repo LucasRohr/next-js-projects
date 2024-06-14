@@ -8,6 +8,7 @@ import {
   Icon,
   Input,
   Button,
+  HeadTitle,
 } from "../../components";
 
 const LOGO_ALURA_URL = "/images/alura-logo.svg";
@@ -103,6 +104,7 @@ function SideImage() {
 export default function HomePage() {
   return (
     <Box>
+      <HeadTitle>Home - Alura Cases Campanha</HeadTitle>
       <Box
         as="main"
         styleSheet={{
