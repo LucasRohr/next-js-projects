@@ -1,9 +1,10 @@
 import type { AppProps } from "next/app";
+import { Provider } from "@skynexui/components";
 
 // Custom App: purpose is to apply default styles, scripts, providers and overall configs throughout all pages
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <>
+    <Provider>
       <style>
         {`
           * {
@@ -12,6 +13,6 @@ export default function App({ Component, pageProps }: AppProps) {
         `}
       </style>
       <Component {...pageProps} />
-    </>
+    </Provider>
   );
 }
