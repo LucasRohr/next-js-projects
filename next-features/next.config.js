@@ -2,5 +2,5 @@
 
 module.exports = {
   trailingSlash: true, // Always have a slash at route end
-  output: "export", // export = Static Site Generation build option
+  output: "standalone", // export = Static Site Generation build option
 };

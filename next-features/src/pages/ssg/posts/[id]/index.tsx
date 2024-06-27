@@ -1,8 +1,10 @@
 import { Box, Text } from "@skynexui/components";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import data from "../../../mock/posts.json";
+import data from "../../../../mock/posts.json";
 
+// Function to return how many and what dynamic routes will need to be pre-rendered in static generation
+// Only works alongside getStaticProps
 export const getStaticPaths = async () => {
   const parsedPaths = data.posts.map((post) => ({
     params: { id: post.id.toString() },
@@ -14,6 +16,8 @@ export const getStaticPaths = async () => {
   };
 };
 
+// Function to return pre-render data for the page content
+// Will be applied to each path on the getStaticPaths return
 export const getStaticProps = async (context) => {
   const id = context.params.id;
   const post = data.posts.find((post) => post.id === id);
@@ -39,6 +43,7 @@ export default function PostPage(props) {
     video: props.video,
   };
 
+  // Alternate way to handle fallback pages, without getStaticPaths option
   if (router.isFallback) {
     return "404";
   }
@@ -52,7 +57,7 @@ export default function PostPage(props) {
         paddingHorizontal: "16px",
       }}
     >
-      {/* Cabeçalho */}
+      {/* Header */}
       <Text
         variant="heading2"
         tag="h1"
@@ -76,7 +81,7 @@ export default function PostPage(props) {
         {post.date}
       </Text>
 
-      {/* Área de Conteudo */}
+      {/* Content */}
       <Box
         styleSheet={{
           flexDirection: "column",
@@ -92,7 +97,7 @@ export default function PostPage(props) {
         )}
       </Box>
 
-      {/* Rodapé */}
+      {/* Footer */}
       <Box
         styleSheet={{
           marginTop: "16px",

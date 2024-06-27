@@ -1,5 +1,5 @@
 /* 
-  /posts/[id]/comments.js
+  /posts/[id]/comments.tsx
 */
 
 import Link from "next/link";

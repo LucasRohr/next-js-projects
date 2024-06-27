@@ -16,7 +16,7 @@ export function Post({ title, content, id }) {
         },
       }}
     >
-      <Link href={`posts/${id}`} passHref>
+      <Link href={`ssg/posts/${id}`} passHref>
         <Text
           tag="a"
           variant="heading4"

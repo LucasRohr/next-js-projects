@@ -6,7 +6,8 @@ import { Post } from "../components/post-component";
 import data from "../mock/posts.json";
 
 // Default Pages Router home page
-export default function Page() {
+// The posts examples focus on SSG (ssg/posts)
+export default function PostsHomePage() {
   const infos = {
     nome: "Lucas Rohr Carreño",
     githubUser: "LucasRohr",
