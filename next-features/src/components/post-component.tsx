@@ -1,7 +1,7 @@
 import { Box, Text } from "@skynexui/components";
 import Link from "next/link";
 
-export function Post({ title, content, id }) {
+export function Post({ title, content, id, renderType }) {
   return (
     <Box
       styleSheet={{
@@ -16,7 +16,7 @@ export function Post({ title, content, id }) {
         },
       }}
     >
-      <Link href={`ssg/posts/${id}`} passHref>
+      <Link href={`${renderType}/posts/${id}`} passHref>
         <Text
           tag="a"
           variant="heading4"

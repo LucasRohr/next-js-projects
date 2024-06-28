@@ -1,9 +1,6 @@
-// === next-features ===
-// This project aims to explore various Next.js features and comment them for future reference
-
 import { Box, Text, Image } from "@skynexui/components";
-import { Post } from "../components/post-component";
-import data from "../mock/posts.json";
+import data from "../../../mock/posts.json";
+import { Post } from "../../../components/post-component";
 
 // Default Pages Router home page
 // The posts examples focus on SSG (ssg/posts)
@@ -56,7 +53,7 @@ export default function PostsHomePage() {
             title={title}
             content={content}
             id={id}
-            renderType="ssg"
+            renderType="isg"
           />
         ))}
       </Box>
