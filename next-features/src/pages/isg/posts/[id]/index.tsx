@@ -39,7 +39,7 @@ export const getStaticProps = async (context) => {
       content: parsedPost.content,
       video: parsedPost.video,
     },
-    revalidate: 10,
+    revalidate: 10, // Revalidate param to update static page from given time to time (ISG)
   };
 };
 
