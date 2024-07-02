@@ -1,11 +1,13 @@
-import { Box, Text } from "@skynexui/components";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import type { GetStaticPaths, GetStaticProps } from "next";
+import { Box, Text } from "@skynexui/components";
+
 import data from "../../../../mock/posts.json";
 
 // Function to return how many and what dynamic routes will need to be pre-rendered in static generation
 // Only works alongside getStaticProps
-export const getStaticPaths = async () => {
+export const getStaticPaths: GetStaticPaths = async () => {
   const parsedPaths = data.posts.map((post) => ({
     params: { id: post.id.toString() },
   }));
@@ -18,7 +20,7 @@ export const getStaticPaths = async () => {
 
 // Function to return pre-render data for the page content
 // Will be applied to each path on the getStaticPaths return
-export const getStaticProps = async (context) => {
+export const getStaticProps: GetStaticProps = async (context) => {
   const id = context.params.id;
   const post = data.posts.find((post) => post.id === id);
 

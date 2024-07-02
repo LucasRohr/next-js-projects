@@ -1,10 +1,11 @@
-import { Box, Text } from "@skynexui/components";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import type { GetStaticPaths, GetStaticProps } from "next";
+import { Box, Text } from "@skynexui/components";
 
 // Function to return how many and what dynamic routes will need to be pre-rendered in static generation
 // Only works alongside getStaticProps
-export const getStaticPaths = async () => {
+export const getStaticPaths: GetStaticPaths = async () => {
   // Bellow is the fetch behavior for SSG render, to use ISG, stop passing a paths array to Next
 
   // const apiPosts = await fetch(
@@ -24,7 +25,9 @@ export const getStaticPaths = async () => {
 
 // Function to return pre-render data for the page content
 // Will be applied to each path on the getStaticPaths return
-export const getStaticProps = async (context) => {
+
+// ISG render type will get static props to each path not passed on the previous array and cache it
+export const getStaticProps: GetStaticProps = async (context) => {
   const id = context.params.id;
   const apiPost = await fetch(
     `https://fakeapi-omariosouto.vercel.app/api/posts/${id}`

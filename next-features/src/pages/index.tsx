@@ -9,7 +9,7 @@ import data from "../mock/posts.json";
 // The posts examples focus on SSG (ssg/posts)
 export default function PostsHomePage() {
   const infos = {
-    nome: "Lucas Rohr Carreño",
+    nome: "Lucas Rohr Carreño - SSG",
     githubUser: "LucasRohr",
   };
 

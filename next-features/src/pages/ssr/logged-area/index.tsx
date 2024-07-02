@@ -1,8 +1,9 @@
-import { Box, Button, Text } from "@skynexui/components";
 import { useRouter } from "next/router";
+import type { GetServerSideProps } from "next";
+import { Box, Button, Text } from "@skynexui/components";
 import nookies from "nookies";
 
-export async function getServerSideProps(context) {
+export const getServerSideProps: GetServerSideProps = async (context) => {
   const cookies = nookies.get(context);
 
   const SECRET_PASSWORD = "jooj123";
@@ -20,7 +21,7 @@ export async function getServerSideProps(context) {
   return {
     props: {},
   };
-}
+};
 
 export default function LoggedScreen(props) {
   const router = useRouter();
