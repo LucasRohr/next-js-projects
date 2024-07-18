@@ -1,6 +1,7 @@
 import { useState } from "react";
 import dynamic from "next/dynamic";
 
+// Dynamic import to improve component render
 const DynamicVideo = dynamic(() => import("../../components/dynamic-video"));
 
 export default function FeaturesHomePage() {
