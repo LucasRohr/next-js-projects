@@ -1,14 +1,17 @@
 import React, { useState } from "react";
 import { useRouter } from "next/router";
+import { AuthService } from "../services";
 
 const DEFAULT_LOGIN_DATA = {
-  user: "omariosouto",
+  username: "omariosouto",
   password: "safepassword",
 };
 
 export default function HomeScreen() {
+  // States
   const [loginData, setLoginDate] = useState(DEFAULT_LOGIN_DATA);
 
+  // Hooks
   const router = useRouter();
 
   const handleChange = (event) => {
@@ -18,8 +21,14 @@ export default function HomeScreen() {
     }));
   };
 
-  const onLoginPress = () => {
-    router.push("/auth-page-ssr", loginData);
+  const onLoginPress = async () => {
+    const result = await AuthService.login(loginData);
+
+    if (result.data) {
+      router.push("/auth-page-ssr");
+    } else {
+      alert(result.error.message);
+    }
   };
 
   return (
@@ -32,10 +41,10 @@ export default function HomeScreen() {
         }}
       >
         <input
-          placeholder="User"
-          name="user"
-          value={loginData.user}
-          defaultValue={loginData.user}
+          placeholder="Username"
+          name="username"
+          value={loginData.username}
+          defaultValue={loginData.username}
           onChange={handleChange}
         />
         <input
