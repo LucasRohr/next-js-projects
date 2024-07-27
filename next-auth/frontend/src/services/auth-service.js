@@ -1,4 +1,5 @@
 import { httpClient } from "../infra";
+import { TokenService } from "./token-service";
 
 export class AuthService {
   static async login(userData) {
@@ -9,6 +10,12 @@ export class AuthService {
       body: userData,
     });
 
-    return result;
+    if (result.data) {
+      TokenService.save(result.data.access_token);
+
+      return result;
+    }
+
+    alert(result.error.message);
   }
 }

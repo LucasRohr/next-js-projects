@@ -24,10 +24,8 @@ export default function HomeScreen() {
   const onLoginPress = async () => {
     const result = await AuthService.login(loginData);
 
-    if (result.data) {
+    if (result) {
       router.push("/auth-page-ssr");
-    } else {
-      alert(result.error.message);
     }
   };
 
